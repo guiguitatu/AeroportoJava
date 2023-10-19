@@ -18,36 +18,4 @@ public class Passagem extends Passageiro{
     public Passagem(String nome, Float quantidadeBagagem, Date dataNascimento) {
         super(nome, quantidadeBagagem, dataNascimento);
     }
-
-    public String getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
-    }
-
-    public String getNumeroVoo() {
-        return numeroVoo;
-    }
-
-    public void setNumeroVoo(String numeroVoo) {
-        this.numeroVoo = numeroVoo;
-    }
-
-    public String getClasse() {
-        return classe;
-    }
-
-    public void setClasse(String classe) {
-        this.classe = classe;
-    }
-
-    public Date getDataHorario() {
-        return dataHorario;
-    }
-
-    public void setDataHorario(Date dataHorario) {
-        this.dataHorario = dataHorario;
-    }
 }
