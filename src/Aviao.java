@@ -16,19 +16,13 @@ abstract public class Aviao {
         this.identificador = identificador;
     }
 
-    protected String embarque(){
-        return("Ainda a implementar");
-    }
+    abstract protected String embarque();
     protected void desembarque(){
 
     }
     abstract protected void docking();
 
-    protected void decolar(){
+    abstract protected void decolar();
 
-    }
-
-    protected void pousar(){
-
-    }
+    abstract protected void pousar();
 }
