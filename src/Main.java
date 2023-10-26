@@ -19,6 +19,7 @@ public class Main {
             escolha = scanner.nextInt();
             if (escolha == 1 || escolha == 2 || escolha == 3 || escolha == 28) {
                 if (escolha == 3) {
+                    // Criando um objeto Passageiro e capturando suas informações
                     Passageiro passageiro = new Passageiro();
 
                     System.out.print("Digite o nome do passageiro: ");
@@ -29,9 +30,8 @@ public class Main {
                     String numeroPassaporte = scanner.nextLine();
                     passageiro.setNumeroPassaporte(numeroPassaporte);
 
-                    passageiro.capturarDataNascimento(); //captura informações da data
-                    passageiro.capturarInformacoesBagagem(); // captura informações de bagagem
-
+                    passageiro.capturarDataNascimento(); // Captura informações da data
+                    passageiro.capturarInformacoesBagagem(); // Captura informações de bagagem
 
                     System.out.println("Detalhes do Passageiro:");
                     System.out.println("Nome: " + passageiro.getNome());
@@ -48,6 +48,41 @@ public class Main {
                     } else {
                         System.out.println("O passageiro não é menor de idade.");
                     }
+
+                    System.out.println("Agora, vamos criar uma passagem aérea.");
+                    System.out.print("Digite a origem da viagem: ");
+                    String origem = scanner.next();
+                    System.out.print("Digite o destino da viagem: ");
+                    String destino = scanner.next();
+                    System.out.print("Digite o número de pessoas: ");
+                    int numPessoas;
+                    if (scanner.hasNextInt()) {
+                        numPessoas = scanner.nextInt();
+                    } else {
+                        System.out.println("Entrada inválida. Digite um número inteiro para o número de pessoas.");
+                        return; // Ou trate o erro de entrada de acordo com sua lógica.
+                    }
+                    System.out.print("Digite a data de ida: ");
+                    String dataIda = scanner.next();
+                    System.out.print("Digite a data de volta: ");
+                    String dataVolta = scanner.next();
+                    System.out.print("Digite a empresa aérea: ");
+                    String empresa = scanner.next();
+
+                    // Criando um objeto Passagem e passando o objeto Passageiro
+                    Passagem passagem = new Passagem(passageiro, origem, destino, numPessoas, dataIda, dataVolta, empresa);
+                    passagem.setEmpresa(empresa); // Defina a empresa aérea
+
+                    System.out.println("========== Passagem Aérea ==========");
+                    System.out.println("Nome: " + passageiro.getNome());
+                    System.out.println("Origem: " + origem);
+                    System.out.println("Destino: " + destino);
+                    System.out.println("Número de Pessoas: " + numPessoas);
+                    System.out.println("Data de Ida: " + dataIda);
+                    System.out.println("Data de Volta: " + dataVolta);
+                    System.out.println("Empresa Aérea: " + empresa);
+                    System.out.println("Valor por pessoa: " + passagem.calcularPreco());
+                    System.out.println("=====================================");
                 } else if (escolha == 1) {
 
                 } else if (escolha == 28) {
