@@ -5,16 +5,17 @@ import java.util.Scanner;
 
 //classe passageiro
 public class Passageiro {
-    private String nome;
-    private Float quantidadeBagagem;
+    protected String nome;
+    private int quantidadeBagagem;
     private Date dataNascimento;
-    private String numeroPassaporte;
+    protected String numeroPassaporte;
 
     //construtor da classe passageiro
-    public Passageiro(String nome, Float quantidadeBagagem, Date dataNascimento) {
+    public Passageiro(String nome, int quantidadeBagagem, Date dataNascimento, String numeropassaporte) {
         this.nome = nome;
         this.quantidadeBagagem = quantidadeBagagem;
         this.dataNascimento = dataNascimento;
+        this.numeroPassaporte = numeropassaporte;
     }
 
     public Passageiro() {
@@ -29,11 +30,11 @@ public class Passageiro {
         this.nome = nome;
     }
 
-    public Float getQuantidadeBagagem() {
+    public int getQuantidadeBagagem() {
         return quantidadeBagagem;
     }
 
-    public void setQuantidadeBagagem(Float quantidadeBagagem) {
+    public void setQuantidadeBagagem(int quantidadeBagagem) {
         this.quantidadeBagagem = quantidadeBagagem;
     }
 
@@ -75,7 +76,7 @@ public class Passageiro {
             System.out.println("Peso total dentro do limite permitido.");
         }
 
-        this.quantidadeBagagem = (float) quantidadeBagagens;
+        this.quantidadeBagagem = (int) quantidadeBagagens;
     }
 
     //metodo para pegar a data de nascimento do usuario

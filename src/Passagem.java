@@ -1,4 +1,8 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
+import java.util.Scanner;
 
 class Passagem extends Passageiro {
     private String origem;
@@ -9,8 +13,8 @@ class Passagem extends Passageiro {
     private String empresa;
     private Passageiro passageiro;
 
-    public Passagem(String nome, String sobrenome, String origem, String destino, int numPessoas, String dataIda, String dataVolta, String empresa, Passageiro passageiro) {
-        super(passageiro.getNome(), passageiro.getQuantidadeBagagem(), passageiro.getDataNascimento());
+    public Passagem(String nome, int quantidadeBagagem, Date dataNascimento, String numeroPassaporte, String origem, String destino, int numPessoas, String dataIda, String dataVolta, String empresa, Passageiro passageiro) {
+        super(nome, quantidadeBagagem, dataNascimento, numeroPassaporte);
         this.origem = origem;
         this.destino = destino;
         this.numPessoas = numPessoas;

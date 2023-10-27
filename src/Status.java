@@ -5,14 +5,14 @@ public class Status extends Aviao{
     protected String escala;
     protected String destino;
     protected String origem;
-    protected String n_Voo;
+    protected int n_Voo;
     protected int portao;
     protected String horario_Voo;
     protected int qnt_Passageiros;
 
     
 
-    public Status(String fabricante, String modelo, String porte, String empresa, int limite_Passageiros, String identificador, String destino, String origem, String n_Voo, int portao, String horario_Voo, int qnt_Passageiros, int status) {
+    public Status(String fabricante, String modelo, String porte, String empresa, int limite_Passageiros, String identificador, String destino, String origem, int n_Voo, int portao, String horario_Voo, int qnt_Passageiros, int status) {
         super(fabricante, modelo, porte, empresa, limite_Passageiros, identificador);
         this.destino = destino;
         this.origem = origem;
@@ -29,7 +29,7 @@ public class Status extends Aviao{
 
     public void setOrigem(String origem) {this.origem = origem;}
 
-    public void setN_Voo(String n_Voo) {this.n_Voo = n_Voo;}
+    public void setN_Voo(int n_Voo) {this.n_Voo = n_Voo;}
 
 
     public void setPortao(int portao) {this.portao = portao;}
@@ -37,16 +37,22 @@ public class Status extends Aviao{
     public void setHorario_Voo(String horario_Voo) {this.horario_Voo = horario_Voo;}
 
     public void setQnt_Passageiros(int qnt_Passageiros) {this.qnt_Passageiros = qnt_Passageiros;}
+    public void setStatus(int status) {this.status = status;}
 
-    public String getN_Voo() { return n_Voo; }
+    public int getN_Voo() { return n_Voo; }
 
     public String getDestino() { return destino; }
 
 
     public int getPortao() { return portao; }
-    public String getHorario_Partida(){ return horario_Voo; }
+    public String getHorario_voo(){ return horario_Voo; }
 
     public int getPassageiros() { return qnt_Passageiros;}
+
+    public int getStatus() {return status;}
+
+    public String getOrigem(){return origem;}
+    public String getEscala(){return escala;}
 
     protected void partida(){
 
