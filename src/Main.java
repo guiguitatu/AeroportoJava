@@ -4,31 +4,25 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        InterfaceGrafica.abrir(new Home().mostrar());
+
+/*
 
         Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         int count = 0;
         ArrayList<Status> chegadas = new ArrayList<>();
-        chegadas.add(new Status("Embraer", "ECJ-900", "Pequeno", "Azul", 20, "PP-EAC", "São paulo", "Curitiba", 8500, 2, "12:20", 15, 3));
-        chegadas.add(new Status("Cesna", "CRJ-180", "Médio", "Gol", 40, "PA-CPJ", "Rio de Janeiro", "Curitiba", 2570, 1, "13:20", 15, 4));
-        chegadas.add(new Status("Boeing", "B-737-100", "Médio", "Gol", 100, "PZ-GHI", "Curitiba", "Cascavel", 3510, 3, "12:00", 40, 1));
-        chegadas.add(new Status("Airbus", "A-350", "Grande", "Latam", 250, "PP-GZH", "Curitiba", "Fortaleza", 3510, 4, "12:20", 40, 6));
+        chegadas.add(new Status("Embraer", "ECJ-900", "Pequeno", "Azul", 20, "PP-EAC", "São paulo", "Curitiba", "",  8500, 2, "12:20", 15, 3));
+        chegadas.add(new Status("Cesna", "CRJ-180", "Médio", "Gol", 40, "PA-CPJ", "Rio de Janeiro", "Curitiba", "", 2570, 1, "13:20", 15, 4));
+        chegadas.add(new Status("Boeing", "B-737-100", "Médio", "Gol", 100, "PZ-GHI", "Curitiba", "Cascavel", "",3510, 3, "12:00", 40, 1));
+        chegadas.add(new Status("Airbus", "A-350", "Grande", "Latam", 250, "PP-GZH", "Curitiba", "Fortaleza", "", 3510, 4, "12:20", 40, 6));
         System.out.println("Bem vind@ ao AEROADM.");
         while (escolha != 28) {
             //Nosso Radar
             if (count == 5) {
-                /*
-                0- chegando para pouso
-                1- taxiando para o portão
-                2- Desembarcando passageiros
-                3- Embarque
-                4-embarque imediato
-                5-última chamada
-                6-saiu do portão
-                7-taxiando
-                8- decolou
-                9-
-                 */
+
+
+
                 Random random = new Random();
                 int port = 0;
                 for (Status radar : chegadas) {
@@ -92,15 +86,15 @@ public class Main {
                     robervaldo = "Fortaleza";
                 }
                 if(viao == 0){
-                    chegadas.add(new Status("Embraer", "ENJ-170", "Pequeno", "Azul", 40, "PP-HGZ", "Curitiba",robervaldo, 1599, port, "12:00", 40, 0));
+                    chegadas.add(new Status("Embraer", "ENJ-170", "Pequeno", "Azul", 40, "PP-HGZ", "Curitiba",robervaldo, "", 1599, port, "12:00", 40, 0));
                 } else if (viao == 1) {
-                    chegadas.add(new Status("Boeing", "B-737-200", "Médio", "Gol", 100, "PZ-AGC", "Curitiba",robervaldo, 1785, port, "12:10", 74, 0));
+                    chegadas.add(new Status("Boeing", "B-737-200", "Médio", "Gol", 100, "PZ-AGC", "Curitiba",robervaldo, "", 1785, port, "12:10", 74, 0));
                 } else if (viao == 2) {
-                    chegadas.add(new Status("Cesna", "CNJ-180", "Pequeno", "Emirates", 50, "PG-GBC", "Curitiba", robervaldo, 1654, port, "12:20", 30, 0));
+                    chegadas.add(new Status("Cesna", "CNJ-180", "Pequeno", "Emirates", 50, "PG-GBC", "Curitiba", robervaldo, "", 1654, port, "12:20", 30, 0));
                 } else if (viao == 3) {
-                    chegadas.add(new Status("Boeing", "B-747-400", "Ultra grande", "Delta", 660, "PP-AZG", "Curitiba", robervaldo, 1445, port, "11:50", 447, 0));
+                    chegadas.add(new Status("Boeing", "B-747-400", "Ultra grande", "Delta", 660, "PP-AZG", "Curitiba", "", robervaldo, 1445, port, "11:50", 447, 0));
                 } else if (viao == 4) {
-                    chegadas.add(new Status("Airbus", "A-320", "Pequeno", "Latam", 80, "PG-ADZ", "Curitiba", robervaldo, 2346, port, "16:00", 35, 0));
+                    chegadas.add(new Status("Airbus", "A-320", "Pequeno", "Latam", 80, "PG-ADZ", "Curitiba", robervaldo, "", 2346, port, "16:00", 35, 0));
                 }
                 count = 0;
 
@@ -216,6 +210,6 @@ public class Main {
                 System.out.println("Por favor insira um número válido!");
             }
             count++;
-        }
+        } */
     }
 }

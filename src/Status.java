@@ -12,10 +12,11 @@ public class Status extends Aviao{
 
     
 
-    public Status(String fabricante, String modelo, String porte, String empresa, int limite_Passageiros, String identificador, String destino, String origem, int n_Voo, int portao, String horario_Voo, int qnt_Passageiros, int status) {
+    public Status(String fabricante, String modelo, String porte, String empresa, int limite_Passageiros, String identificador, String destino, String origem,String escala, int n_Voo, int portao, String horario_Voo, int qnt_Passageiros, int status) {
         super(fabricante, modelo, porte, empresa, limite_Passageiros, identificador);
         this.destino = destino;
         this.origem = origem;
+        this.escala = escala;
         this.n_Voo = n_Voo;
         this.portao = portao;
         this.horario_Voo = horario_Voo;
