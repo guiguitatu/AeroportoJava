@@ -20,9 +20,16 @@ public class Main {
         while (escolha != 28) {
             //Nosso Radar
             if (count == 5) {
-
-
-
+                0- chegando para pouso
+                1- taxiando para o portão
+                2- Desembarcando passageiros
+                3- Embarque
+                4-embarque imediato
+                5-última chamada
+                6-saiu do portão
+                7-taxiando
+                8- decolou
+                9-
                 Random random = new Random();
                 int port = 0;
                 for (Status radar : chegadas) {

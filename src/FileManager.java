@@ -6,6 +6,7 @@ import java.util.*;
 
 public class FileManager extends Exception{
     private String caminhoArquivo;
+    private String caminho2 = "./database/csv.csv";
     private Random random = new Random();
     String[][] lista = {
             {"Embraer", "ECJ-900", "Pequeno", "Azul", "20", "PP-EAC", "São paulo", "Curitiba", "8500", "2", "12:20", "15", "0"}
@@ -81,6 +82,8 @@ public class FileManager extends Exception{
         }
     }
 
+
+
     public void Desembarque() {
         try {
             System.out.println(" \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
@@ -114,6 +117,27 @@ public class FileManager extends Exception{
         }
     }
 
+    private void mudarnumero(){
+        try {
+            FileReader arquivo = new FileReader(caminhoArquivo);
+            BufferedReader br = new BufferedReader(arquivo);
+            String cabecalho = br.readLine();
+            String situacao = "";
+            System.out.println(cabecalho);
+            while (br.ready()) {
+                String dado = br.readLine();
+                String[] dadoSeparado = dado.split(",");
+                List<String> dadoTratado = Arrays.asList(dadoSeparado);
+                switch (dadoTratado.get("10")) {
+                    case 8 -> dadoTratado.set(12, "10");
+                }
+            }
+            br.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void Escrever(){
         File csvFile = new File(caminhoArquivo);
         try {
@@ -137,18 +161,35 @@ public class FileManager extends Exception{
 
     public void Radar() {
         int num = random.nextInt(5);
+        int voo = random.nextInt(10000);
         switch (num){
 
             case 0 : {
                 lista = new String[][]{
-                        {"Embraer", "ECJ-900", "Pequeno", "Azul", "20", "PP-EAC", "São paulo", "Curitiba", "8500", "2", "12:20", "15", "0"}
+                        {"Embraer", "ECJ-900", "Pequeno", "Azul", "20", "PP-EAC", "Curitiba", "São Paulo", "8500", "2", "12:20", "15", "0"}
                 };
                 Escrever();
             }
             case 1: {
                 lista = new String[][]{
-                        {"Cesna", "CRJ-180", "Médio", "Gol", "40", "PA-CPJ", "Rio de Janeiro", "Curitiba", "2570", "1", "13:20", "15", "0"}
+                        {"Cesna", "CRJ-180", "Médio", "Gol", "40", "PA-CPJ", "Curitiba", "Rio de Janeiro", "2570", "1", "13:20", "15", "0"}
                 };
+                Escrever();
+                break;
+            }
+            case 2: {
+                lista = new String[][]{
+                        {"Boeing", "B-737-100", "Médio", "Gol", "100", "PZ-GHI", "Curitiba", "Cascavel", "3510", "3", "12:00", "40", "0"}
+                };
+                Escrever();
+                break;
+            }
+            case 3 : {
+                lista = new String[][]{
+                        {"Airbus", "A-350", "Grande", "Latam", "250", "PP-GZH", "Curitiba", "Fortaleza", "3510", "4", "12:20", "40", "0"}
+                };
+                Escrever();
+                break;
             }
         }
     }

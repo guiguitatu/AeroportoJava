@@ -27,7 +27,7 @@ public class FilePanel extends InterfaceGrafica {
         embarque.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fm.Embarque();
+                fm.Desembarque();
             }
         });
 
@@ -35,7 +35,7 @@ public class FilePanel extends InterfaceGrafica {
         desembarque.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fm.Desembarque();
+                fm.Embarque();
             }
         });
 

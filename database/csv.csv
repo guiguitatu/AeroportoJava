@@ -1,5 +1,10 @@
 fabricante,modelo,porte,empresa,limite_Passageiros,identificador,destino,origem,n_Voo,portao,horario_Voo,qnt_Passageiros,status
-Embraer,ECJ-900,Pequeno,Azul,20,PP-EAC,São Paulo,Curitiba,8500,2,12:20,15,3
-Cesna,CRJ-180,Médio,Gol,40,PA-CPJ,RiodeJaneiro,Curitiba,2570,1,13:20,15,4
+Embraer,ECJ-900,Pequeno,Azul,20,PP-EAC,Curitiba,São Paulo,8500,2,12:20,15,3
+Cesna,CRJ-180,Médio,Gol,40,PA-CPJ,Curitiba,Rio de Janeiro,2570,1,13:30,15,4
 Boeing,B-737-100,Médio,Gol,100,PZ-GHI,Curitiba,Cascavel,3510,3,12:00,40,0
 Airbus,A-350,Grande,Latam,250,PP-GZH,Curitiba,Fortaleza,3510,4,12:20,40,6
+Boeing,B-787,Grande,Gol,230,PP-GZA,Curitiba,Manaus,5,5142,12:25,120,1
+Embraer,E-195,Pequeno,Azul,130,PG-ZGO,Curitiba,Rio Branco,7,8451,13:10,130,8
+ATR, ATR-72 600,Pequeno,Azul,60,PP-GMA,Curitiba,Foz do Iguaçu,9,9824,12:40,45,2
+Boeing,B-747-300,Ultra grande,Air France,400,PG-AZR,Curitiba,Paris,6,3574,12:10,380,5
+Airbus,A-320,Médio,Latam,120,PP-GFA,Curitiba,Florianópolis,8456,8,13:00,120,7
