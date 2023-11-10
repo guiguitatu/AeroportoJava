@@ -128,9 +128,6 @@ public class FileManager extends Exception{
                 String dado = br.readLine();
                 String[] dadoSeparado = dado.split(",");
                 List<String> dadoTratado = Arrays.asList(dadoSeparado);
-                switch (dadoTratado.get("10")) {
-                    case 8 -> dadoTratado.set(12, "10");
-                }
             }
             br.close();
         } catch (Exception e) {

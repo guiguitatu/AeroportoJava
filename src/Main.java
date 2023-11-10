@@ -1,12 +1,14 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+    /*
         InterfaceGrafica.abrir(new Home().mostrar());
 
-/*
+
 
         Scanner scanner = new Scanner(System.in);
         int escolha = 0;
@@ -20,6 +22,7 @@ public class Main {
         while (escolha != 28) {
             //Nosso Radar
             if (count == 5) {
+
                 0- chegando para pouso
                 1- taxiando para o portão
                 2- Desembarcando passageiros
@@ -30,6 +33,7 @@ public class Main {
                 7-taxiando
                 8- decolou
                 9-
+
                 Random random = new Random();
                 int port = 0;
                 for (Status radar : chegadas) {
@@ -183,6 +187,33 @@ public class Main {
                     System.out.println("=====================================");
                 } else if (escolha == 1) {
 
+
+                    Tripulacao gerador = new Tripulacao();
+
+                    List<String> tripulacao1 = gerador.gerarTripulacaoAleatoria();
+                    List<String> tripulacao2 = gerador.gerarTripulacaoAleatoria();
+                    List<String> tripulacao3 = gerador.gerarTripulacaoAleatoria();
+
+                    System.out.println("Tripulação 1: " + tripulacao1);
+                    System.out.println("Tripulação 2: " + tripulacao2);
+                    System.out.println("Tripulação 3: " + tripulacao3);
+
+                    Scanner scanner1 = new Scanner(System.in);
+                    System.out.print("Escolha a melhor tripulação (1 ,2 e 3): ");
+                    int escolhaUsuario = scanner.nextInt();
+
+                    if (escolhaUsuario == 1) {
+                        gerador.exibirResultado("Tripulação escolhida: ", tripulacao1);
+                    } else if (escolhaUsuario == 2) {
+                        gerador.exibirResultado("Tripulação escolhida: ", tripulacao2);
+                    } else if (escolhaUsuario == 3) {
+                        gerador.exibirResultado("Tripulação escolhida: ", tripulacao3);
+                        System.out.println("Opção inválida. Por favor, escolha 1 ou 2.");
+                    }
+
+
+
+
                     for (Status chegada:chegadas) {
                         if(chegada.getStatus() == 0){
                             System.out.println("Voo Nº: " + chegada.getN_Voo() + ", chegando de: " + chegada.getOrigem() + " para " + chegada.getDestino() + "\n Horário do voo: " + chegada.getHorario_voo() + ". Status do voo: Chegando no aeroporto");
@@ -217,6 +248,7 @@ public class Main {
                 System.out.println("Por favor insira um número válido!");
             }
             count++;
-        } */
+        }
+    */
     }
 }
