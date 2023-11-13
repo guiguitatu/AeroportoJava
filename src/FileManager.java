@@ -195,12 +195,9 @@ Arquivo CSV para reserva
             } else {
                 System.err.println("O arquivo CSV especificado não foi encontrado.");
             }
-            // Escreva o cabeçalho
             String cabecalho = "fabricante,modelo,porte,empresa,limite_Passageiros,identificador,destino,origem,n_Voo,portao,horario_Voo,qnt_Passageiros,status";
             writer.write(cabecalho);
             writer.newLine();
-
-            // Escreva os dados do ArrayList no arquivo CSV
             for (Status status : chegadas) {
                 String linha = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%d,%d,%s,%d,%d",
                         status.getFabricante(),

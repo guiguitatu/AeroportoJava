@@ -7,26 +7,39 @@ import javax.swing.JPanel;
 public class FilePanel extends InterfaceGrafica {
     private String tipo;
     private String caminhoArquivo;
-
     int count = 0;
-
-
+    private JButton radar;
 
     public FilePanel(String tipo, String caminhoArquivo) {
         this.tipo = tipo;
         this.caminhoArquivo = caminhoArquivo;
+        radar = new JButton("Radar");
+        radar.setEnabled(false);
     }
 
     @Override
     public JPanel mostrar() {
+
         FileManager fm = new FileManager(caminhoArquivo);
         JPanel panel = new JPanel();
-        JButton viao = new JButton("Ver os aviões no aeroporto");
+        radar.setEnabled(false);
 
+        radar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fm.Radar();
+                radar.setEnabled(false);
+            }
+        });
+
+        JButton viao = new JButton("Ver os aviões no aeroporto");
         viao.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                count++;
+                if (count < 5) {
+                    count++;
+                }
+                checkAndUpdateRadarButton();
                 fm.AviaoAeroporto();
             }
         });
@@ -35,7 +48,10 @@ public class FilePanel extends InterfaceGrafica {
         embarque.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                count++;
+                if (count < 5) {
+                    count++;
+                }
+                checkAndUpdateRadarButton();
                 fm.Embarque();
             }
         });
@@ -44,17 +60,11 @@ public class FilePanel extends InterfaceGrafica {
         desembarque.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                count++;
-                fm.teste();
-            }
-        });
-
-        JButton radar = new JButton("Radar");
-
-        radar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fm.Radar();
+                if (count < 5) {
+                    count++;
+                }
+                checkAndUpdateRadarButton();
+                fm.Desembarque();
             }
         });
 
@@ -72,5 +82,12 @@ public class FilePanel extends InterfaceGrafica {
         panel.add(sair);
 
         return panel;
+    }
+
+    private void checkAndUpdateRadarButton() {
+        if (count >= 5) {
+            radar.setEnabled(true);
+            count = 0;
+        }
     }
 }
