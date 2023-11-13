@@ -3,7 +3,7 @@ abstract public class Aviao {
     protected String fabricante;
     protected String modelo;
     protected String porte;
-    protected String Empresa;
+    protected String empresa;
     protected int limite_Passageiros;
     protected String identificador;
 
@@ -11,7 +11,7 @@ abstract public class Aviao {
         this.fabricante = fabricante;
         this.modelo = modelo;
         this.porte = porte;
-        Empresa = empresa;
+        this.empresa = empresa;
         this.limite_Passageiros = limite_Passageiros;
         this.identificador = identificador;
     }

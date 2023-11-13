@@ -8,6 +8,8 @@ public class FilePanel extends InterfaceGrafica {
     private String tipo;
     private String caminhoArquivo;
 
+    int count = 0;
+
 
 
     public FilePanel(String tipo, String caminhoArquivo) {
@@ -21,13 +23,20 @@ public class FilePanel extends InterfaceGrafica {
         JPanel panel = new JPanel();
         JButton viao = new JButton("Ver os aviões no aeroporto");
 
-        viao.addActionListener(event -> fm.AviaoAeroporto());
+        viao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                count++;
+                fm.AviaoAeroporto();
+            }
+        });
 
         JButton embarque = new JButton("Embarque");
         embarque.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fm.Desembarque();
+                count++;
+                fm.Embarque();
             }
         });
 
@@ -35,12 +44,14 @@ public class FilePanel extends InterfaceGrafica {
         desembarque.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fm.Embarque();
+                count++;
+                fm.teste();
             }
         });
 
-        JButton escreveCSV = new JButton("Radar");
-        escreveCSV.addActionListener(new ActionListener() {
+        JButton radar = new JButton("Radar");
+
+        radar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fm.Radar();
@@ -57,7 +68,7 @@ public class FilePanel extends InterfaceGrafica {
         panel.add(viao);
         panel.add(embarque);
         panel.add(desembarque);
-        panel.add(escreveCSV);
+        panel.add(radar);
         panel.add(sair);
 
         return panel;

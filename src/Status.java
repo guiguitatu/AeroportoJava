@@ -32,13 +32,22 @@ public class Status extends Aviao{
 
     public void setN_Voo(int n_Voo) {this.n_Voo = n_Voo;}
 
-
     public void setPortao(int portao) {this.portao = portao;}
 
     public void setHorario_Voo(String horario_Voo) {this.horario_Voo = horario_Voo;}
 
     public void setQnt_Passageiros(int qnt_Passageiros) {this.qnt_Passageiros = qnt_Passageiros;}
     public void setStatus(int status) {this.status = status;}
+
+    public Object getFabricante() { return fabricante;}
+
+    public Object getModelo(){ return modelo;}
+
+    public Object getPorte(){return porte;}
+
+    public Object getEmpresa(){return empresa;}
+
+    public Object getLimite_Passageiros(){return limite_Passageiros;}
 
     public int getN_Voo() { return n_Voo; }
 
@@ -54,6 +63,7 @@ public class Status extends Aviao{
 
     public String getOrigem(){return origem;}
     public String getEscala(){return escala;}
+    public String getIdentificador(){return identificador;}
 
     protected void partida(){
 
@@ -101,5 +111,12 @@ public class Status extends Aviao{
 
     protected void hangarear(){
         int status = 4;
+    }
+    public String toString() {
+        return "Fabricante: " + fabricante + " / Modelo: " + modelo + " / Porte: " + porte + " / Empresa: " + empresa +
+                " / Limite de Passageiros: " + limite_Passageiros + " / Identificador: " + identificador +
+                " / Destino: " + destino + " / Origem: " + origem + " / Número do Voo: " + n_Voo +
+                " / Portão: " + portao + " / Horário do voo: " + horario_Voo +
+                " / Passageiros embarcados: " + qnt_Passageiros + " / Situação: " + status;
     }
 }

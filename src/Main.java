@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Random;
+import java.io.File;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-    /*
+
         InterfaceGrafica.abrir(new Home().mostrar());
-
-
-
+        /*
         Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         int count = 0;
