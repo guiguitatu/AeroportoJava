@@ -17,6 +17,9 @@ public class FilePanel extends InterfaceGrafica {
         radar.setEnabled(false);
     }
 
+    public static void add(JButton buttonCSV) {
+    }
+
     @Override
     public JPanel mostrar() {
 
@@ -68,7 +71,7 @@ public class FilePanel extends InterfaceGrafica {
             }
         });
 
-        JButton sair = new JButton("Sair");
+        JButton sair = new JButton("Voltar");
         sair.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

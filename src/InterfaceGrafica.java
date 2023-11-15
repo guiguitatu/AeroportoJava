@@ -2,13 +2,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public abstract class InterfaceGrafica {
-    public static final JFrame frame = new JFrame("Titulo da Janela");
+    public static final JFrame frame = new JFrame("AeroADM");
 
-    public abstract JPanel mostrar();
 
     public static void abrir(JPanel panel) {
         frame.add(panel);
-        frame.setSize(500, 200);
+        frame.setSize(500, 400);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -20,4 +19,7 @@ public abstract class InterfaceGrafica {
         frame.revalidate();
         frame.repaint();
     }
+
+    public abstract JPanel mostrar();
+
 }

@@ -5,12 +5,8 @@ public class FileManager extends Exception{
 
     private boolean lindonjohnson = false;
     private String caminhoArquivo;
-    private String temp;
     private Random random = new Random();
     ArrayList<Status> chegadas = new ArrayList<>();
-    String[][] lista = {
-            {"Embraer", "ECJ-900", "Pequeno", "Azul", "20", "PP-EAC", "São paulo", "Curitiba", "8500", "2", "12:20", "15", "4"}
-    };
 
     private void ColocaItensArray(){
         chegadas.add(new Status("Embraer", "ECJ-900", "Pequeno", "Azul", 20, "PP-EAC", "São paulo", "Curitiba", "", 8500, 2, "12:20", 15, 3));
