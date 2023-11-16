@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,7 +25,7 @@ public class FilePanel extends InterfaceGrafica {
     public JPanel mostrar() {
 
         FileManager fm = new FileManager(caminhoArquivo);
-        JPanel panel = new JPanel();
+        JPanel panel = new JPanel(new GridLayout(5, 1, 10, 10));
         radar.setEnabled(false);
 
         radar.addActionListener(new ActionListener() {
