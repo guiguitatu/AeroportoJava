@@ -7,7 +7,7 @@ public abstract class InterfaceGrafica {
 
     public static void abrir(JPanel panel) {
         frame.add(panel);
-        frame.setSize(500, 400);
+        frame.setSize(600, 400);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

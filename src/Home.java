@@ -8,7 +8,8 @@ public class Home extends InterfaceGrafica {
 
     @Override
     public JPanel mostrar() {
-        JPanel panel = new JPanel(new GridLayout(2, 1, 10, 10));
+        JPanel panel = new JPanel(new GridLayout(3, 1, 10, 10));
+        panel.setBackground(Color.DARK_GRAY);
 
 
         JButton buttonCSV = new JButton("Embarque e desembarque");
@@ -19,7 +20,12 @@ public class Home extends InterfaceGrafica {
                 buttonCSV.setPreferredSize(new Dimension(150, 50));
                 FilePanel.add(buttonCSV);
             }
+
         });
+        buttonCSV.setBackground(Color.gray);
+        buttonCSV.setFont(new Font("Arial", Font.PLAIN, 20));
+
+
 
         JButton passagens = new JButton("Passagens");
         passagens.addActionListener(new ActionListener() {
@@ -29,6 +35,10 @@ public class Home extends InterfaceGrafica {
                 FilePanel2.add(passagens);
             }
         });
+        passagens.setBackground(Color.gray);
+        passagens.setFont(new Font("Arial", Font.PLAIN, 20));
+
+
 
         panel.add(passagens);
         panel.add(buttonCSV);

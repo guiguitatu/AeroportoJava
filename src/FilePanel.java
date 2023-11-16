@@ -15,6 +15,8 @@ public class FilePanel extends InterfaceGrafica {
         this.tipo = tipo;
         this.caminhoArquivo = caminhoArquivo;
         radar = new JButton("Radar");
+        radar.setBackground(Color.GRAY);
+        radar.setFont(new Font("Arial", Font.PLAIN, 20));
         radar.setEnabled(false);
     }
 
@@ -25,7 +27,8 @@ public class FilePanel extends InterfaceGrafica {
     public JPanel mostrar() {
 
         FileManager fm = new FileManager(caminhoArquivo);
-        JPanel panel = new JPanel(new GridLayout(5, 1, 10, 10));
+        JPanel panel = new JPanel(new GridLayout(6, 1, 10, 10));
+        panel.setBackground(Color.DARK_GRAY);
         radar.setEnabled(false);
 
         radar.addActionListener(new ActionListener() {
@@ -36,7 +39,7 @@ public class FilePanel extends InterfaceGrafica {
             }
         });
 
-        JButton viao = new JButton("Ver os aviões no aeroporto");
+        JButton viao = new JButton("Aviões no aeroporto");
         viao.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,6 +50,9 @@ public class FilePanel extends InterfaceGrafica {
                 fm.AviaoAeroporto();
             }
         });
+        viao.setBackground(Color.GRAY);
+        viao.setFont(new Font("Arial", Font.PLAIN, 20));
+
 
         JButton embarque = new JButton("Embarque");
         embarque.addActionListener(new ActionListener() {
@@ -59,6 +65,9 @@ public class FilePanel extends InterfaceGrafica {
                 fm.Embarque();
             }
         });
+        embarque.setBackground(Color.GRAY);
+        embarque.setFont(new Font("Arial", Font.PLAIN, 20));
+
 
         JButton desembarque = new JButton("Desembarque");
         desembarque.addActionListener(new ActionListener() {
@@ -71,6 +80,9 @@ public class FilePanel extends InterfaceGrafica {
                 fm.Desembarque();
             }
         });
+        desembarque.setBackground(Color.GRAY);
+        desembarque.setFont(new Font("Arial", Font.PLAIN, 20));
+
 
         JButton sair = new JButton("Voltar");
         sair.addActionListener(new ActionListener() {
@@ -79,6 +91,10 @@ public class FilePanel extends InterfaceGrafica {
                 changePanel(new Home().mostrar());
             }
         });
+
+        sair.setBackground(Color.GRAY);
+        sair.setFont(new Font("Arial", Font.PLAIN, 20));
+
         panel.add(viao);
         panel.add(embarque);
         panel.add(desembarque);

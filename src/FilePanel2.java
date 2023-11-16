@@ -18,6 +18,11 @@ public class FilePanel2 extends InterfaceGrafica {
         this.caminhoArquivo = caminhoArquivo;
     }
 
+    static {
+        UIManager.put("OptionPane.messageFont", new Font("Arial", Font.PLAIN, 18));
+        UIManager.put("OptionPane.buttonFont", new Font("Arial", Font.PLAIN, 15));
+    }
+
     public static void add(JButton passagens) {
     }
 
@@ -25,27 +30,51 @@ public class FilePanel2 extends InterfaceGrafica {
     public JPanel mostrar() {
 
         FileManager fm = new FileManager(caminhoArquivo);
-        JPanel panel = new JPanel(new GridLayout(3, 1, 5, 5));
+        JPanel panel = new JPanel(new GridLayout(4, 1, 10, 10));
+        panel.setBackground(Color.darkGray);
 
 
         JButton passageiro = new JButton("Cadastro Passageiro");
         passageiro.addActionListener(event -> {
 
             String nome = null;
-            try {
-                nome = JOptionPane.showInputDialog("Digite seu nome completo: ");
-                if (nome.length() < 10)
-                    throw new StringTooLong("O campo nome deve conter no minimo 10 caracteres");
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage());
+            while (true) {
+                try {
+                    nome = JOptionPane.showInputDialog("Digite seu nome completo: ");
+                    if (nome.length() < 10) {
+                        throw new StringTooLong("O campo nome deve conter no mínimo 10 caracteres");
+                    } else {
+                        break;
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                }
             }
-            String data = JOptionPane.showInputDialog(null, "Digite sua data de nascimento(dd/mm/aaaa): ");
-            String passaporte = JOptionPane.showInputDialog(null, "Digite seu passaporte(AA + 6 digitos)");
-            String bagagens = JOptionPane.showInputDialog(null, "Digite a quantidade de bagagens: ");
 
-            String cadastro_usuario = "Nome: " + nome + "\nData de Nascimento: " + data + "\nPassaporte: " + passaporte + "\nBagagens: " + bagagens;
+            String data = JOptionPane.showInputDialog(null, "Digite sua data de nascimento(dd/mm/aaaa): ");
+
+            String passaporte = null;
+            while (true) {
+                try {
+                    passaporte = JOptionPane.showInputDialog(null, "Digite seu passaporte(AA + 6 dígitos)");
+                    if (passaporte.length() != 8) {
+                        throw new StringTooLong("O campo deve conter duas letras e 6 dígitos");
+                    } else {
+                        break;
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                }
+            }
+
+            String bagagens = JOptionPane.showInputDialog(null, "Digite a quantidade de bagagens: ");
+            String cadastro_usuario = "DETALHES PASSAGEIRO" + "\nNome: " + nome + "\nData de Nascimento: " + data + "\nPassaporte: " + passaporte + "\nBagagens: " + bagagens;
             JOptionPane.showMessageDialog(null, cadastro_usuario);
         });
+
+        passageiro.setBackground(Color.GRAY);
+        passageiro.setFont(new Font("Arial", Font.PLAIN, 20));
+
 
         JButton criarPassagem = new JButton("Criar Passagem");
         criarPassagem.addActionListener(event -> {
@@ -57,11 +86,13 @@ public class FilePanel2 extends InterfaceGrafica {
             String dataVolta = JOptionPane.showInputDialog(null, "Data de retorno: ");
             String empresa = JOptionPane.showInputDialog(null, "Empresa area: ");
 
-            String passagem = "Origem: " + origem + "\nDestino: " + destino + "\nQuantos passageiros: " + numPessoas + "\nData ida: " + dataIda + "\nData retorno: " + dataVolta + "\nEmpresa area: " + empresa;
+            String passagem = "DETALHES DA PASSAGEM " + "\nOrigem: " + origem + "\nDestino: " + destino + "\nQuantos passageiros: " + numPessoas + "\nData ida: " + dataIda + "\nData retorno: " + dataVolta + "\nEmpresa area: " + empresa;
             JOptionPane.showMessageDialog(null , passagem);
-
-
         });
+
+        criarPassagem.setBackground(Color.GRAY);
+        criarPassagem.setFont(new Font("Arial", Font.PLAIN, 20));
+
 
 
         JButton sair = new JButton("Voltar");
@@ -71,6 +102,10 @@ public class FilePanel2 extends InterfaceGrafica {
                 changePanel(new Home().mostrar());
             }
         });
+
+        sair.setBackground(Color.GRAY);
+        sair.setFont(new Font("Arial", Font.PLAIN, 20));
+
 
         panel.add(passageiro);
         panel.add(criarPassagem);
