@@ -39,6 +39,7 @@ public class FileManager extends Exception{
             BufferedReader br = new BufferedReader(arquivo);
             String cabecalho = br.readLine();
             System.out.println(cabecalho);
+            String bacias = null;
             while (br.ready()) {
                 String dado = br.readLine();
                 String[] dadoSeparado = dado.split(",");
@@ -54,9 +55,10 @@ public class FileManager extends Exception{
                     case "7" -> situacao = "Taxiando para a pista";
                     case "8" -> situacao = "Saiu do aeroporto";
                 }
-                System.out.println("Fabricante: " + dadoTratado.get(0) + "/ Modelo: " + dadoTratado.get(1) + "/ Porte:" + dadoTratado.get(2) + "/ Empresa:" + dadoTratado.get(3) + "/ Limite de Passageiros: " + dadoTratado.get(4) + "/ Identificador: " + dadoTratado.get(5) + "/ Destino: " + dadoTratado.get(6) + "/ Origem: " + dadoTratado.get(7) + "/ Número do Voo: " + dadoTratado.get(8) + "/ Portão:" + dadoTratado.get(9) + "/ Horário do voo: " + dadoTratado.get(10) + "/ Passageiros embarcados: " + dadoTratado.get(11) + "/ Situação: " + situacao);
+                bacias = bacias + "Fabricante: " + dadoTratado.get(0) + "/ Modelo: " + dadoTratado.get(1) + "/ Empresa:" + dadoTratado.get(3) + "/ Limite de Passageiros: " + dadoTratado.get(4) + "/ Destino: " + dadoTratado.get(6) + "/ Origem: " + dadoTratado.get(7) + "/ Número do Voo: " + dadoTratado.get(8) + "/ Portão:" + dadoTratado.get(9) + "/ Horário do voo: " + dadoTratado.get(10) + "/ Passageiros embarcados: " + dadoTratado.get(11) + "/ Situação: " + situacao + "\n";
             }
             br.close();
+            JOptionPane.showMessageDialog(null, bacias);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -231,6 +233,8 @@ Arquivo CSV para reserva
         int count = 0;
         int num = random.nextInt(4);
         int voo = random.nextInt(10000);
+        int portao = 0;
+        String batata = null;
 
         mudarnumero();
 
@@ -238,19 +242,19 @@ Arquivo CSV para reserva
 
         switch (num) {
             case 0 -> {
-                chegadas.add(new Status("Embraer", "E-190", "Pequeno", "Azul", 20, "PP-EAC", "Curitiba", "São Paulo", "", 8500, 2, "12:20", 15, 0));
+                chegadas.add(new Status("Embraer", "E-190", "Pequeno", "Azul", 20, "PP-EAC", "Curitiba", "São Paulo", "", 8500, 3, "12:20", 15, 0));
                 Escrever();
             }
             case 1 -> {
-                chegadas.add(new Status("Cesna", "CRJ-180", "Médio", "Gol", 40, "PA-CPJ", "Curitiba", "Rio de Janeiro", "", 2570, 1, "13:20", 15, 0));
+                chegadas.add(new Status("Cesna", "CRJ-180", "Médio", "Gol", 40, "PA-CPJ", "Curitiba", "Rio de Janeiro", "", 2570, 5, "13:20", 15, 0));
                 Escrever();
             }
             case 2 -> {
-                chegadas.add(new Status("Boeing", "B-737-200", "Médio", "Gol", 140, "PZ-GHI", "Curitiba", "Cascavel", "", 510, 3, "12:00", 6, 0));
+                chegadas.add(new Status("Boeing", "B-737-200", "Médio", "Gol", 140, "PZ-GHI", "Curitiba", "Cascavel", "", 510, 8, "12:00", 6, 0));
                 Escrever();
             }
             case 3 -> {
-                chegadas.add(new Status("Airbus", "A-350", "Grande", "Latam", 250, "PP-GZH", "Curitiba", "Fortaleza", "", 3510, 4, "12:20", 40, 0));
+                chegadas.add(new Status("Airbus", "A-350", "Grande", "Latam", 250, "PP-GZH", "Curitiba", "Fortaleza", "", 3510, 10, "12:20", 40, 0));
                 Escrever();
             }
         }

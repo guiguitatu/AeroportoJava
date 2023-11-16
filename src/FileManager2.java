@@ -26,8 +26,15 @@ public class FileManager2 extends Exception {
             }
         }
         String data = null;
-        data = JOptionPane.showInputDialog(null, "Digite sua data de nascimento(dd-mm-aaaa): ");
 
+        while (true) {
+            data = JOptionPane.showInputDialog(null, "Digite sua data de nascimento(dd-mm-aaaa): ");
+            if (data.matches("\\d{2}-\\d{2}-\\d{4}")){
+                break;
+            }else {
+                JOptionPane.showMessageDialog(null, "O campo não está como socilitato");
+            }
+        }
         String passaporte = null;
         while (true) {
             try {
