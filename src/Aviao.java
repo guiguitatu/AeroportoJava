@@ -17,9 +17,7 @@ abstract public class Aviao {
     }
 
     abstract protected String embarque();
-    protected void desembarque(){
-
-    }
+    protected void desembarque(){}
     abstract protected void docking();
 
     abstract protected void decolar();

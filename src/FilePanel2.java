@@ -29,47 +29,14 @@ public class FilePanel2 extends InterfaceGrafica {
     @Override
     public JPanel mostrar() {
 
-        FileManager fm = new FileManager(caminhoArquivo);
+        FileManager2 fm = new FileManager2(caminhoArquivo);
         JPanel panel = new JPanel(new GridLayout(4, 1, 10, 10));
         panel.setBackground(Color.darkGray);
 
 
         JButton passageiro = new JButton("Cadastro Passageiro");
         passageiro.addActionListener(event -> {
-
-            String nome = null;
-            while (true) {
-                try {
-                    nome = JOptionPane.showInputDialog("Digite seu nome completo: ");
-                    if (nome.length() < 10) {
-                        throw new StringTooLong("O campo nome deve conter no mínimo 10 caracteres");
-                    } else {
-                        break;
-                    }
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, e.getMessage());
-                }
-            }
-
-            String data = JOptionPane.showInputDialog(null, "Digite sua data de nascimento(dd/mm/aaaa): ");
-
-            String passaporte = null;
-            while (true) {
-                try {
-                    passaporte = JOptionPane.showInputDialog(null, "Digite seu passaporte(AA + 6 dígitos)");
-                    if (passaporte.length() != 8) {
-                        throw new StringTooLong("O campo deve conter duas letras e 6 dígitos");
-                    } else {
-                        break;
-                    }
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, e.getMessage());
-                }
-            }
-
-            String bagagens = JOptionPane.showInputDialog(null, "Digite a quantidade de bagagens: ");
-            String cadastro_usuario = "DETALHES PASSAGEIRO" + "\nNome: " + nome + "\nData de Nascimento: " + data + "\nPassaporte: " + passaporte + "\nBagagens: " + bagagens;
-            JOptionPane.showMessageDialog(null, cadastro_usuario);
+            fm.CadastroPassageiro();
         });
 
         passageiro.setBackground(Color.GRAY);
@@ -78,16 +45,7 @@ public class FilePanel2 extends InterfaceGrafica {
 
         JButton criarPassagem = new JButton("Criar Passagem");
         criarPassagem.addActionListener(event -> {
-
-            String origem = JOptionPane.showInputDialog(null, "Origem do voo: ");
-            String destino = JOptionPane.showInputDialog(null, "Destino do voo: ");
-            String numPessoas = JOptionPane.showInputDialog(null, "Quantos passageiros: ");
-            String dataIda = JOptionPane.showInputDialog(null, "Data de ida: ");
-            String dataVolta = JOptionPane.showInputDialog(null, "Data de retorno: ");
-            String empresa = JOptionPane.showInputDialog(null, "Empresa area: ");
-
-            String passagem = "DETALHES DA PASSAGEM " + "\nOrigem: " + origem + "\nDestino: " + destino + "\nQuantos passageiros: " + numPessoas + "\nData ida: " + dataIda + "\nData retorno: " + dataVolta + "\nEmpresa area: " + empresa;
-            JOptionPane.showMessageDialog(null , passagem);
+            fm.CriaPassagem();
         });
 
         criarPassagem.setBackground(Color.GRAY);

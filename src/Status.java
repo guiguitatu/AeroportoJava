@@ -110,7 +110,7 @@ public class Status extends Aviao{
     }
 
     protected void hangarear(){
-        int status = 4;
+        int status = 15;
     }
     public String toString() {
         return "Fabricante: " + fabricante + " / Modelo: " + modelo + " / Porte: " + porte + " / Empresa: " + empresa +

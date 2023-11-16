@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
@@ -73,6 +74,7 @@ public class FileManager extends Exception{
             String cabecalho = br.readLine();
             String situacao = "";
             System.out.println(cabecalho);
+            String bacia= null;
             while (br.ready()) {
                 String dado = br.readLine();
                 String[] dadoSeparado = dado.split(",");
@@ -89,9 +91,10 @@ public class FileManager extends Exception{
                     case "8" -> situacao = "Saiu do aeroporto";
                 }
                 switch (dadoTratado.get(12)) {
-                    case "0", "1", "2" -> System.out.println("Empresa: " + dadoTratado.get(3) + "/ Destino: " + dadoTratado.get(7) + "/ Número do Voo: " + dadoTratado.get(8) + "/ Portão: " + dadoTratado.get(9) + "/ Horário do Voo: " + dadoTratado.get(10) + "/Situação: " + situacao);
+                    case "0", "1", "2" -> bacia = bacia + "Empresa: " + dadoTratado.get(3) + "/ Destino: " + dadoTratado.get(7) + "/ Número do Voo: " + dadoTratado.get(8) + "/ Portão: " + dadoTratado.get(9) + "/ Horário do Voo: " + dadoTratado.get(10) + "/Situação: " + situacao + "\n";
                 }
             }
+            JOptionPane.showMessageDialog(null, bacia);
             br.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -123,6 +126,7 @@ public class FileManager extends Exception{
             String cabecalho = br.readLine();
             String situacao = "";
             System.out.println(cabecalho);
+            String bacia = null;
             while (br.ready()) {
                 String dado = br.readLine();
                 String[] dadoSeparado = dado.split(",");
@@ -139,9 +143,11 @@ public class FileManager extends Exception{
                     case "8" -> situacao = "Saiu do aeroporto";
                 }
                 switch (dadoTratado.get(12)) {
-                    case "3", "4", "5", "6", "7", "8" -> System.out.println("Empresa: " + dadoTratado.get(3) + "/ Destino: " + dadoTratado.get(7) + "/ Número do Voo: " + dadoTratado.get(8) + "/ Portão: " + dadoTratado.get(9) + "/ Horário do Voo: " + dadoTratado.get(10) + "/Situação: " + situacao);
+                    case "3", "4", "5", "6", "7", "8" -> bacia = bacia + "Empresa: " + dadoTratado.get(3) + "/ Destino: " + dadoTratado.get(7) + "/ Número do Voo: " + dadoTratado.get(8) + "/ Portão: " + dadoTratado.get(9) + "/ Horário do Voo: " + dadoTratado.get(10) + "/Situação: " + situacao + "\n";
                 }
+
             }
+            JOptionPane.showMessageDialog(null, bacia);
             br.close();
         } catch (Exception e) {
             e.printStackTrace();
